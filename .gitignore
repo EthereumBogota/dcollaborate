@@ -1,0 +1,14 @@
+# Compiler files
+blockchain/cache/
+blockchain/out/
+
+# Ignores development broadcast logs
+!/blockchain/broadcast
+/blockchain/broadcast/*/31337/
+/blockchain/broadcast/**/dry-run/
+
+# Docs
+docs/
+
+# Dotenv file
+blockchain/.env
