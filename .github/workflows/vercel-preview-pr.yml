@@ -1,16 +1,16 @@
 name: Vercel Preview Deployment
 
 on:
+  push:
+    branches-ignore:
+      - main
   pull_request:
     paths:
       - 'frontend/**'
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-on:
-  push:
-    branches-ignore:
-      - main
+
 jobs:
   Deploy-Preview:
     runs-on: ubuntu-latest
