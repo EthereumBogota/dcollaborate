@@ -38,7 +38,7 @@ jobs:
           forge test -vvv
         id: test
 
-      - nmae: Deploy to scroll sepolia
+      - name: Deploy to scroll sepolia
         continue-on-error: false
         run: |
           forge create src/Counter.sol:Counter --rpc-url "https://sepolia-rpc.scroll.io/" --private-key ${{ secrets.SCROLL_SEPOLIA_PK }} --legacy
