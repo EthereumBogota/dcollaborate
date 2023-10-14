@@ -18,7 +18,8 @@ const Home = () => {
 
     const [address, setAddress] = useState<string>();
     const [balance, setBalance] = useState<string>();
-    
+  
+
     const  handleConnectWallet = async () => {
         if (window.ethereum) { 
             const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -29,8 +30,9 @@ const Home = () => {
         } else {
             alert("Please Install Metamask!!!");
         }
-     }
-
+    }
+    const connect = <ConnectWallet handleClick={handleConnectWallet} />;     
+    
     return (
         <>
             <Head>
@@ -41,17 +43,8 @@ const Home = () => {
             />
             <link rel="icon" href="/favicon.ico" />
             </Head>
-            
-            <Navbar  
-                items={items} 
-                rightContent={
-                    <ConnectWallet
-                        handleClick={handleConnectWallet}
-                        address={address}
-                        balance={balance}
-                    />
-                } 
-            />
+               
+            <Navbar  items={items}  {...connect}  />
 
             <SectionTitle
                 title=" DCollaborate">
