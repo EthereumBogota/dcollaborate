@@ -33,7 +33,9 @@ const Home = () => {
             alert("Please Install Metamask!!!");
         }
     }
-    const connect = <ConnectWallet handleClick={handleConnectWallet} />;     
+    const connectProps = {address: address, balance: balance, handleClick: handleConnectWallet}
+    const connect = <ConnectWallet {...connectProps} />;     
+    const navbarProps = {items: items, rightContent: connect};
     
     return (
         <>
@@ -46,7 +48,7 @@ const Home = () => {
             <link rel="icon" href="/favicon.ico" />
             </Head>
                
-            <Navbar  items={items}  {...connect}  />
+            <Navbar  {...navbarProps}  />
 
             <SectionTitle
                 title=" DCollaborate">
