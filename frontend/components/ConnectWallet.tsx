@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Link from "next/link";
 import Container from "./Container";
 
-const ConnectWallet = (props) => {
+const ConnectWallet = (props:any) => {
     return (
         <Container className={`flex w-full flex-col mt-4 ${
             props.align === "left" ? "" : "items-center justify-center text-center"
