@@ -12,3 +12,37 @@ docs/
 
 # Dotenv file
 blockchain/.env
+
+
+# Frontend
+frontend/node_modules
+frontend/.pnp
+frontend/.pnp.js
+
+# testing
+frontend/coverage
+
+# next.js
+frontend/.next/
+frontent/out/
+
+# production
+frontent/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+frontend/npm-debug.log*
+frontentd/yarn-debug.log*
+frontend/yarn-error.log*
+
+# local env files
+frontent/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# vercel
+frontend/.vercel
