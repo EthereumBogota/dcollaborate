@@ -1,20 +1,3 @@
 {
-    "env": {
-        "browser": true,
-        "commonjs": true,
-        "es2021": true
-    },
-    "extends": [
-        "eslint:recommended",
-        "standard-with-typescript",
-        "plugin:react/recommended"
-    ],
-    "parserOptions": {
-        "ecmaVersion": "latest"
-    },
-    "plugins": [
-        "react"
-    ],
-    "rules": {
-    }
+    "extends": [ "eslint:recommended", "next" ]
 }

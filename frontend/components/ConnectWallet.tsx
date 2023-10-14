@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
-import Link from "next/link";
-import Container from "./Container";
+import PropTypes from 'prop-types'
+import Link from 'next/link'
+import Container from './Container'
 
 const ConnectWallet = (props:any) => {
     return (

@@ -1,8 +1,7 @@
-import Link from "next/link";
-import ThemeChanger from "./DarkSwitch";
-import Image from "next/image"
-import { Disclosure } from "@headlessui/react";
-import PropTypes from 'prop-types';
+import Link from 'next/link'
+import ThemeChanger from './DarkSwitch'
+import { Disclosure } from '@headlessui/react'
+import PropTypes from 'prop-types'
 
 const Navbar = (props:any) => {
 
