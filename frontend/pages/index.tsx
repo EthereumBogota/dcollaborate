@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import Head from "next/head";
-import SectionTitle from "../components/SectionTitle";
-import ConnectWallet from "../components/ConnectWallet";
-import Navbar from "../components/Navbar";
-import { ethers } from "ethers";
+import Head from 'next/head'
+import SectionTitle from '../components/SectionTitle'
+import ConnectWallet from '../components/ConnectWallet'
+import Navbar from '../components/Navbar'
+import { ethers } from 'ethers'
 
 declare let window:any;
 
@@ -18,7 +18,8 @@ const Home = () => {
 
     const [address, setAddress] = useState<string>();
     const [balance, setBalance] = useState<string>();
-    
+  
+
     const  handleConnectWallet = async () => {
         if (window.ethereum) { 
             const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -26,11 +27,14 @@ const Home = () => {
             const signer = provider.getSigner()
             setAddress(await signer.getAddress())
             setBalance(ethers.utils.formatEther(await signer.getBalance())) 
+            console.log(address);
+            console.log(balance);
         } else {
             alert("Please Install Metamask!!!");
         }
-     }
-
+    }
+    const connect = <ConnectWallet handleClick={handleConnectWallet} />;     
+    
     return (
         <>
             <Head>
@@ -41,17 +45,8 @@ const Home = () => {
             />
             <link rel="icon" href="/favicon.ico" />
             </Head>
-            
-            <Navbar  
-                items={items} 
-                rightContent={
-                    <ConnectWallet
-                        handleClick={handleConnectWallet}
-                        address={address}
-                        balance={balance}
-                    />
-                } 
-            />
+               
+            <Navbar  items={items}  {...connect}  />
 
             <SectionTitle
                 title=" DCollaborate">
