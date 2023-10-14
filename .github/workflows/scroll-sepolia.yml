@@ -1,9 +1,8 @@
-name: foundry-pr
+name: Scroll sepolia Deployment
 
 on:
-  pull_request:
-    paths:
-    - 'blockchain/**'
+  workflow_dispatch:
+    branches: [ main ]
 
 env:
   FOUNDRY_PROFILE: ci
@@ -16,7 +15,7 @@ jobs:
       fail-fast: true
     defaults:
       run:
-        working-directory ./blockchain
+        working-directory: './blockchain'
 
     steps:
       - uses: actions/checkout@v3
@@ -38,3 +37,8 @@ jobs:
         run: |
           forge test -vvv
         id: test
+
+      - nmae: Deploy to scroll sepolia
+        continue-on-error: false
+        run: |
+          forge create src/Counter.sol:Counter --rpc-url "https://sepolia-rpc.scroll.io/" --private-key ${{ secrets.SCROLL_SEPOLIA_PK }} --legacy
