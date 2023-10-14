@@ -41,7 +41,7 @@ const Navbar = (props:any) => {
 
                 <Disclosure.Panel className="flex flex-wrap w-full my-5 lg:hidden">
                   <>
-                    {props.items.map((item, index) => (
+                    {props.items.map((item:any, index:any) => (
                       <Link key={index} href="/" className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none">
                           {item}
                       </Link>
@@ -58,7 +58,7 @@ const Navbar = (props:any) => {
         {/* menu  */}
         <div className="hidden text-center lg:flex lg:items-center">
           <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
-            {props.items.map((menu, index) => (
+            {props.items.map((menu:any, index:any) => (
               <li className="mr-3 nav__item" key={index}>
                 <Link href="/" className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800">
                     {menu}
