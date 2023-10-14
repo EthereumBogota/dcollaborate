@@ -4,7 +4,7 @@ import Image from "next/image"
 import { Disclosure } from "@headlessui/react";
 import PropTypes from 'prop-types';
 
-const Navbar = (props) => {
+const Navbar = (props:any) => {
 
   return (
     <div className="w-full">
