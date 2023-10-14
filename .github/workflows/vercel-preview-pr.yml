@@ -1,9 +1,6 @@
 name: Vercel Preview Deployment
 
 on:
-  push:
-    branches-ignore:
-      - main
   pull_request:
     paths:
       - 'frontend/**'
