@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import PropTypes from 'prop-types'
-import Link from 'next/link'
 import Container from './Container'
 import { ethers } from 'ethers'
 
@@ -42,9 +40,6 @@ const ConnectWallet = (props:any) => {
         </Container>
     );
 }
-
-ConnectWallet.propTypes = {
-};
 
 
 export default ConnectWallet;

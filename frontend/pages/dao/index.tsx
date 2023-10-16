@@ -19,8 +19,7 @@ const DAO = () => {
             <SectionTitle>
                 Dao Page
             </SectionTitle>
-            <ScrollDeposit />
-            
+            {isConnected && <ScrollDeposit />}
         </Container>
     )
 } 
