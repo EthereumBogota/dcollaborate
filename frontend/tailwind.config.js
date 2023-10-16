@@ -19,5 +19,8 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require("@tailwindcss/aspect-ratio")],
+  plugins: [
+    require("rippleui"),
+    require("@tailwindcss/aspect-ratio"), 
+  ],
 };

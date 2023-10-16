@@ -19,6 +19,7 @@
     "@emotion/styled": "^11.10.6",
     "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^2.0.17",
+    "@scroll-tech/contracts": "^0.1.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "ethers": "^5.x",
     "flowbite": "^1.8.1",
@@ -28,7 +29,8 @@
     "prop-types": "^15.8.1",
     "react": "^18",
     "react-dom": "^18",
-    "react-hook-form": "^7.43.9"
+    "react-hook-form": "^7.43.9",
+    "rippleui": "^1.12.1"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.5.4",

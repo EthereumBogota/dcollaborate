@@ -1,32 +1,49 @@
+import { useState } from 'react';
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 import Container from './Container'
+import { ethers } from 'ethers'
+
+
+declare let window:any;
 
 const ConnectWallet = (props:any) => {
+    
+    const [address, setAddress] = useState<string>();
+    const [balance, setBalance] = useState<string>();
+
+    const  handleConnectWallet = async () => {
+        if (window.ethereum) { 
+            const provider = new ethers.providers.Web3Provider(window.ethereum);
+            await provider.send('eth_requestAccounts', [])
+            const signer = provider.getSigner()
+            setAddress(await signer.getAddress())
+            setBalance(ethers.utils.formatEther(await signer.getBalance())) 
+            props.setIsConnected(true);
+        } else {
+            alert("Please Install Metamask!!!");
+        }
+    }
+
     return (
         <Container className={`flex w-full flex-col mt-4 ${
             props.align === "left" ? "" : "items-center justify-center text-center"
         }`}>
            {/** show the connect wallet button just if is not connect **/}
-           {!props.address &&
-            <Link href="/" className="px-6 py-2 text-white bg-indigo-600 rounded-md md:ml-5"
-                onClick={props.handleClick}
-            >
-              Connect Wallet
-            </Link>
+           {!address &&
+            <button type="button" className="btn btn-primary w-full" onClick={handleConnectWallet}>{props.label}</button>
+
            } 
 
             <div className="ml-2 flex flex-col">
-                <div className="leading-snug text-xs text-gray-600">{props.address}</div>
-                <div className="leading-snug text-sm text-gray-600">{props.balance}</div>
+                <div className="leading-snug text-xs text-gray-600">{address}</div>
+                <div className="leading-snug text-sm text-gray-600">{balance}</div>
             </div>
         </Container>
     );
 }
 
 ConnectWallet.propTypes = {
-    /** The handle to connect a wallet**/
-    handleClick : PropTypes.func.isRequired,
 };
 
 
