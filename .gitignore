@@ -12,6 +12,7 @@ docs/
 
 # Dotenv file
 blockchain/.env
+blockchain/node_modules
 
 
 # Frontend
@@ -46,3 +47,5 @@ frontend/.env.production.local
 
 # vercel
 frontend/.vercel
+
+.env

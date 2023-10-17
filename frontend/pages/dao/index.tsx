@@ -5,9 +5,13 @@ import Menu from '../../components/Menu'
 import Sidebar from '../../components/Sidebar'
 
 const DAO = () => {
-
     const [isConnected,setIsConnected] = useState<string>();
-    const connectProps = {href:'dao', label:'Connect Wallet as DAO', setIsConnected:setIsConnected  }
+    const connectProps = {
+        href:'dao', 
+        label:'Connect Wallet as DAO', 
+        setIsConnected:setIsConnected  
+    }
+
     const connect = <ConnectWallet {...connectProps}/>
     const menuProps = {connectWallet:connect}
     const menu =  <Menu {...menuProps} />
