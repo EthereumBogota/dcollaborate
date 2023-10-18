@@ -14,6 +14,8 @@ class WalletService {
         }
     }
 
+
+
     // TODO: handle errors
     async getSigner() : Promise<Signer> {
         const provider = await this.getProvider()
