@@ -2,10 +2,13 @@
 import ScrollPaymentBridgeService from '../services/scroll';
 import WalletService from '../services/wallet';
 import Container from './Container'
+import {ethers} from 'ethers'
 
 
 const ScrollDeposit = () => {
-    const CONTRACT_ADDRESS = '0x0B742FA6bC60F06b4d3D8743b43680b047b7c8f0';
+    // TODO: set it on env variables
+    const CONTRACT_ADDRESS = '0xe623b0B7B6458E4c6413d5be8202805Da3F60d1C';
+    // TODO: get it from UI
     const L2_ADDRES = '0x5Cc7EDA15183E95EAd8EE8E7349b48F84aa71E99'
 
     const walletService = new WalletService()
@@ -13,7 +16,7 @@ const ScrollDeposit = () => {
   
     const onClickDeposit = async () => {
         const signer = await walletService.getSigner()
-        scrollService.DepositETHToScroll(signer, CONTRACT_ADDRESS, L2_ADDRES)
+        scrollService.DepositETHToScroll(signer, CONTRACT_ADDRESS, L2_ADDRES,   ethers.utils.parseUnits("0.2", 1))
     }
     
     return (

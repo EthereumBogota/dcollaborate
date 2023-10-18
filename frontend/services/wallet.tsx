@@ -17,7 +17,6 @@ class WalletService {
     // TODO: handle errors
     async getSigner() : Promise<Signer> {
         const provider = await this.getProvider()
-        provider.send('eth_requestAccounts', [])
         const signer = provider.getSigner()
         return signer
     }

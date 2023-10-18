@@ -24,14 +24,14 @@ import type {
 
 export interface ScrollPaymentBridgeInterface extends utils.Interface {
   functions: {
-    "depositETHToScroll(address,uint256)": FunctionFragment;
+    "depositETHToScroll(address,uint256,uint256)": FunctionFragment;
   };
 
   getFunction(nameOrSignatureOrTopic: "depositETHToScroll"): FunctionFragment;
 
   encodeFunctionData(
     functionFragment: "depositETHToScroll",
-    values: [string, BigNumberish]
+    values: [string, BigNumberish, BigNumberish]
   ): string;
 
   decodeFunctionResult(
@@ -71,6 +71,7 @@ export interface ScrollPaymentBridge extends BaseContract {
   functions: {
     depositETHToScroll(
       scrollBrige: string,
+      amount: BigNumberish,
       gasLimit: BigNumberish,
       overrides?: PayableOverrides & { from?: string }
     ): Promise<ContractTransaction>;
@@ -78,6 +79,7 @@ export interface ScrollPaymentBridge extends BaseContract {
 
   depositETHToScroll(
     scrollBrige: string,
+    amount: BigNumberish,
     gasLimit: BigNumberish,
     overrides?: PayableOverrides & { from?: string }
   ): Promise<ContractTransaction>;
@@ -85,6 +87,7 @@ export interface ScrollPaymentBridge extends BaseContract {
   callStatic: {
     depositETHToScroll(
       scrollBrige: string,
+      amount: BigNumberish,
       gasLimit: BigNumberish,
       overrides?: CallOverrides
     ): Promise<void>;
@@ -95,6 +98,7 @@ export interface ScrollPaymentBridge extends BaseContract {
   estimateGas: {
     depositETHToScroll(
       scrollBrige: string,
+      amount: BigNumberish,
       gasLimit: BigNumberish,
       overrides?: PayableOverrides & { from?: string }
     ): Promise<BigNumber>;
@@ -103,6 +107,7 @@ export interface ScrollPaymentBridge extends BaseContract {
   populateTransaction: {
     depositETHToScroll(
       scrollBrige: string,
+      amount: BigNumberish,
       gasLimit: BigNumberish,
       overrides?: PayableOverrides & { from?: string }
     ): Promise<PopulatedTransaction>;
