@@ -17,7 +17,7 @@ const ScrollDeposit = () => {
 
     const onClickDeposit = async () => {
         const signer = await walletService.getSigner()
-        scrollService.TransferL2L1(signer, amount)
+        scrollService.TransferL1L2(signer, amount)
     }
     
     return (
