@@ -4,7 +4,7 @@ import ConnectWallet from '../../components/ConnectWallet';
 import Container from '../../components/Container'
 import Menu from '../../components/Menu'
 import SectionTitle from '../../components/SectionTitle';
-import ScrollDeposit from '../../components/ScrollDeposit';
+import Sidebar from '../../components/Sidebar'
 
 const DAO = () => {
 
@@ -19,7 +19,11 @@ const DAO = () => {
             <SectionTitle>
                 Dao Page
             </SectionTitle>
-            {isConnected && <ScrollDeposit />}
+            {isConnected && 
+                <div>
+                    <Sidebar />
+                </div>
+                }
         </Container>
     )
 } 
