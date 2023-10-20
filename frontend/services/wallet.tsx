@@ -18,9 +18,16 @@ class WalletService {
 
     // TODO: handle errors
     async getSigner() : Promise<Signer> {
-        const provider = await this.getProvider()
-        const signer = provider.getSigner()
-        return signer
+        return new Promise( (resolve, reject ) => {
+            this.getProvider().then( provider => {
+                if (provider != undefined) {
+                    resolve(provider.getSigner())
+                }
+                reject('provider undefined')
+            }).catch( err => {
+                reject(err)
+            })
+        })
     }
 }
 

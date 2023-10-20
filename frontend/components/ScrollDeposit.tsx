@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import ScrollPaymentBridgeService from '../services/scroll';
 import WalletService from '../services/wallet';
 import Container from './Container'
@@ -10,8 +10,8 @@ const ScrollDeposit = () => {
     const walletService = new WalletService()
     const scrollService = new ScrollPaymentBridgeService()
  
-    const onChangeAmount = (event) => {
-        setAmount(event.target.value)
+    const onChangeAmount = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setAmount(event.currentTarget.value)
     }
 
     const onClickDeposit = async () => {
