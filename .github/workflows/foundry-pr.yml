@@ -27,6 +27,8 @@ jobs:
       - name: Run Fogerge install 
         run: forge install --no-git --root blockchain
 
+      - name: Run Forge install forge-std
+        run : foundry-rs/forge-std --no-git --root blockchain
       - name: Run Forge build
         run: |
           forge --version
