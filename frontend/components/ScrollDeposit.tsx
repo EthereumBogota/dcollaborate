@@ -1,7 +1,24 @@
 
+import React, { useState } from 'react';
+import ScrollPaymentBridgeService from '../services/scroll';
+import WalletService from '../services/wallet';
 import Container from './Container'
 
+
 const ScrollDeposit = () => {
+    const [amount, setAmount] = useState<string>("")
+    const walletService = new WalletService()
+    const scrollService = new ScrollPaymentBridgeService()
+ 
+    const onChangeAmount = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setAmount(event.currentTarget.value)
+    }
+
+    const onClickDeposit = async () => {
+        const signer = await walletService.getSigner()
+        scrollService.TransferL1L2(signer, amount)
+    }
+    
     return (
         <Container>
             <div className="mx-auto flex w-full max-w-sm flex-col gap-6">
@@ -12,12 +29,12 @@ const ScrollDeposit = () => {
                     <div className="form-field">
                         <label className="form-label">Amount</label>
                         <div className="form-control">
-                            <input placeholder="Example: 1000 ETH" className="input max-w-full" />
+                            <input value={amount} onChange={onChangeAmount} placeholder="Example: 1000 ETH" className="input max-w-full" />
                         </div>
                     </div>
                     <div className="form-field pt-5">
                         <div className="form-control justify-between">
-                            <button type="button" className="btn btn-primary w-full">Deposit</button>
+                            <button onClick={onClickDeposit} type="button" className="btn btn-primary w-full">Deposit</button>
                         </div>
                     </div>
 
