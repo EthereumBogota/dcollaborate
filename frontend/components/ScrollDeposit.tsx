@@ -3,7 +3,6 @@ import { useState } from 'react';
 import ScrollPaymentBridgeService from '../services/scroll';
 import WalletService from '../services/wallet';
 import Container from './Container'
-import {ethers} from 'ethers'
 
 
 const ScrollDeposit = () => {

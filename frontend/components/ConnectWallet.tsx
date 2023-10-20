@@ -14,7 +14,7 @@ const ConnectWallet = (props:any) => {
         const signer = await walletService.getSigner()
         setAddress(await signer.getAddress())
         setBalance(ethers.utils.formatEther(await signer.getBalance())) 
-        props.setIsConnected(true);
+        props.setIsConnected(true)
     }
 
     return (
@@ -22,9 +22,8 @@ const ConnectWallet = (props:any) => {
             props.align === "left" ? "" : "items-center justify-center text-center"
         }`}>
            {/** show the connect wallet button just if is not connect **/}
-           {!address &&
-            <button type="button" className="btn btn-primary w-full" onClick={handleConnectWallet}>{props.label}</button>
-
+           {!props.isConnected &&
+                <button type="button" className="btn btn-primary w-full" onClick={handleConnectWallet}>{props.label}</button>
            } 
 
             <div className="ml-2 flex flex-col">

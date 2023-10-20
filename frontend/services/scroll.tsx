@@ -1,5 +1,5 @@
 
-import {BigNumberish, Signer} from 'ethers'
+import {Signer} from 'ethers'
 import {ETHToScrollPaymentBridge__factory} from '../generated/contract-types/factories/ETHToScrollPaymentBridge__factory'
 import {ethers} from 'ethers'
 import { ScrollToETHPaymentBridge__factory } from '../generated/contract-types'
