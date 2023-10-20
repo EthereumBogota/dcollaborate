@@ -31,7 +31,7 @@ jobs:
           version: nightly
 
       - name: Forge install std
-        run: forge install foundry-rs/forge-std
+        run: forge install foundry-rs/forge-std  --no-git 
              
       - name: Run Forge build
         run: |
