@@ -24,11 +24,15 @@ jobs:
         #  submodules: recursive
       - name: Install JS libs
         run : npm install
+
       - name: Install Foundry
         uses: foundry-rs/foundry-toolchain@v1
         with:
           version: nightly
 
+      - name: Forge install std
+        run: forge install foundry-rs/forge-std  --no-git 
+             
       - name: Run Forge build
         run: |
           forge --version
