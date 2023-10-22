@@ -11,13 +11,13 @@ const Sidebar = (props:any) => {
                         <nav className="menu rounded-md">
                             <section className="menu-section px-4">
                                 <ul className="menu-items">
-                                    <li className="menu-item">
+                                    <li className="menu-item menu-active">
                                         <span>Deposit</span>
                                     </li>
                                     <li className="menu-item">
                                         <span>Transactions</span>
                                     </li>
-                                    <li className="menu-item menu-active">
+                                    <li className="menu-item">
                                         <span>Loans</span>
                                     </li>
                                     <li className="menu-item">

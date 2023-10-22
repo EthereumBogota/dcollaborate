@@ -21,30 +21,22 @@ class ScrollPaymentBridgeService {
     // @param signer the signer of the transaction
     // @param recipientAddressL2 is the address where will be send the amount on L2
     TransferL1L2(signer:Signer, amount: string) {
-        alert(amount)
         const contract = ETHToScrollPaymentBridge__factory.connect(CONTRACT_ETH_TO_SCROLL, signer)
         const gas=ethers.utils.parseUnits("5000", "ether") // gas in wei
         const options = {value: ethers.utils.parseUnits(amount, "ether")} // amount in wei 
 
-        contract.depositETHToScroll(MASTER_WALLET_SCROLL, gas, options).then( tx => {
-            console.log("L1L2: all is ok")
-            console.log(tx)
-        })
+        return contract.depositETHToScroll(MASTER_WALLET_SCROLL, gas, options)    
     }
 
     // This method will withdrae ETH from L2 to L1
     // @param signer the signer of the transaction
     // @param recipientAddressL2 is the address where will be send the amount on L2
-    TransferL2L1(signer:Signer, amount: string) {
-        alert(amount)
+    TransferL2L1(signer:Signer, amount: string){
         const contract =  ScrollToETHPaymentBridge__factory.connect(CONTRACT_SCROLL_TO_ETH, signer)
         const gas=ethers.utils.parseUnits("5000", "ether") //gas  in wei
         const options = {value: ethers.utils.parseUnits(amount, "ether")}// amount in  wei
         
-        contract.withdrawETH(MASTER_WALLET_ETH, gas, options).then(tx => {
-            console.log("L2L1: alls is ok")
-            console.log(tx)
-        })
+        return contract.withdrawETH(MASTER_WALLET_ETH, gas, options)
     } 
 }
 
