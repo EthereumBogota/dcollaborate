@@ -3,6 +3,7 @@ import { useState } from 'react';
 import ConnectWallet from '../../components/ConnectWallet';
 import Menu from '../../components/Menu'
 import Sidebar from '../../components/Sidebar'
+import ScrollDeposit from '../../components/ScrollDeposit';
 
 const DAO = () => {
     const [isConnected, setIsConnected] = useState<string>();
@@ -28,7 +29,9 @@ const DAO = () => {
                     </div>
                 </div>
             }
-            <Sidebar {...sidebarProps} />
+            <Sidebar {...sidebarProps} >
+                <ScrollDeposit />
+            </Sidebar>
         </div>
     )
 } 
