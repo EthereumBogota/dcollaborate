@@ -2,6 +2,7 @@ import Link from 'next/link'
 import ThemeChanger from './DarkSwitch'
 import { Disclosure } from '@headlessui/react'
 import NavbarItem from '../types/NavbarItem'
+import Image from "next/image"
 
 const Navbar = (props:any) => {
 
@@ -14,6 +15,20 @@ const Navbar = (props:any) => {
             <>
               <div className="flex flex-wrap items-center justify-between w-full lg:w-auto">
 
+                <Link href="/">
+                  <span className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100">
+                    <span>
+                      <Image
+                        src="/images/logo.png"
+                        alt="D"
+                        width="32"
+                        height="32"
+                        className="w-8"
+                      />
+                    </span>
+                    <span>DCollaborate</span>
+                  </span>
+                </Link>
 
                 <Disclosure.Button
                   aria-label="Toggle Menu"
