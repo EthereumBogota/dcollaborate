@@ -32,13 +32,11 @@ const Sidebar = (props:any) => {
             </div>
 
             <div className="flex flex-col p-4 w-full">
-                {props.topmenu}
-                
                 <div className="w-fit">
                     <label htmlFor="sidebar-mobile-fixed" className="btn btn-primary sm:hidden">Open Sidebar</label>
                 </div>
 
-                {props.content}
+                {props.children}
             </div>
         </div>
       }
