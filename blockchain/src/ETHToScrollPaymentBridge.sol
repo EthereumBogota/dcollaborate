@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.16;
+pragma solidity ^0.8.19;
 
 import "@scroll-tech/contracts/L1/gateways/IL1ETHGateway.sol";
 
@@ -14,6 +14,4 @@ contract ETHToScrollPaymentBridge {
     function depositETHToScroll(address to, uint gasLimit) public payable {
         IL1ETHGateway(to).depositETH(msg.sender, msg.value, gasLimit);
     }
-
-    receive() external payable {}
 }
